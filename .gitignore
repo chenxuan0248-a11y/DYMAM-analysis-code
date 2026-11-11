@@ -1,0 +1,12 @@
+# This candidate is an allowlisted code-only export.
+*
+!.gitignore
+!README.md
+!UPLOAD_ALLOWLIST.md
+!outputs/
+!outputs/emse_three_open_items_20261105/
+!outputs/emse_three_open_items_20261105/*.py
+!outputs/emse_three_open_items_20261105/*.md
+
+!FILE_SHA256SUMS.txt
+!requirements-analysis.txt
