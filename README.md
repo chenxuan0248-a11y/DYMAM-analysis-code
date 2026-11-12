@@ -19,4 +19,3 @@ From `paper/`, compile `sn-article.tex` with a LaTeX toolchain that supports the
 
 > **Data and code availability.** The analysis code, evaluation scripts, and aggregate figures and tables reported in this study will be available from the project repository at <https://github.com/chenxuan0248-a11y/DYMAM-analysis-code> upon publication. Host-level prediction records and original reconnaissance bundles are not included. Some underlying raw reconnaissance data may be requested from the corresponding author, subject to applicable data-use terms, privacy safeguards, and review; access cannot be guaranteed.
 
-The aggregate artifacts support inspection of reported results, not independent reconstruction of measurements from original observations. The repository does not contain a code or data licence; reuse permissions must be confirmed with the authors.

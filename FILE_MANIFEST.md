@@ -1,10 +1,10 @@
 # Submission Package File Manifest
 
-Generated: 2026-11-12T09:06:32+08:00
+Generated: 2026-11-12T09:30:46+08:00
 
 | File | Bytes | SHA256 |
 |---|---:|---|
-| `README.md` | 1873 | `db3cbdb7964ca7de2104bb8413d7da52123e030be52bde019332b3cfc1408a2b` |
+| `README.md` | 1624 | `1de066a6ee34b1a913d4486114b0443533809233e450d6e01bc3e96d265c60f9` |
 | `code/README.md` | 708 | `0e3b5e1a8f103a6495c781555d5d59b0700b7055b92c5cca3efba018e863ed65` |
 | `code/evaluation/__init__.py` | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `code/evaluation/calibration.py` | 5642 | `cd58abfa0911cc31fcfc2330f26890e9564e78723253d1be85921d015c3d92d0` |
