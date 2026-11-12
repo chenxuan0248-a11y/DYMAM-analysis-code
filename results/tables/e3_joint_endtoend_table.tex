@@ -1,0 +1,14 @@
+\begin{table}[t]\centering\small
+\caption{End-to-end (localization $\times$ repair) on the 180-cell E3 grid. Under \emph{Oracle} localization ARCS is the ILP optimum ($\rho_C\!=\!1$), beats single-point, and costs $\ll$ global. Under \emph{reference-free detector} localization the scope-selection quality is unchanged but end-to-end success is gated by detection: host-grain trades cost ($7.12\,C^*$) for success ($0.806$), family-grain recovers cost to optimum ($1.01\,C^*$) at $0.661$ success. global replay is localization-independent.}
+\label{tab:joint-e2e}
+\begin{tabular}{llrr}\toprule
+localization & repair & Success & cost/$C^*$\\\midrule
+Oracle & single-point & 0.444 & 1.00\\
+Oracle & \textbf{ARCS} & \textbf{1.000} & \textbf{1.00}\\
+(any) & global replay & 1.000 & 160.7\\
+\midrule
+detector, host-grain & ARCS & 0.806 & 7.12\\
+detector, family-grain & ARCS & 0.661 & 1.01\\
+\midrule
+\multicolumn{4}{p{.9\linewidth}}{\footnotesize Oracle single-point / ARCS / global from \texttt{e3\_oracle\_stats\_v1.json}; detector rows from \texttt{e3\_detector\_v1.json} (\texttt{combined}). cost/$C^*$ averaged over that row's success cells. global cost/$C^*$ shown relative to the same $C^*$ base (mean global cost $321.8$).}\\
+\bottomrule\end{tabular}\end{table}

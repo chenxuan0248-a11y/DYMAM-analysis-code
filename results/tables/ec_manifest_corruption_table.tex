@@ -1,0 +1,11 @@
+\begin{table}[t]\centering\footnotesize
+\caption{Sensitivity of the combined detector to the discovery manifest (record-level corruption of the frozen manifests; the pipeline is not re-run). Each manifest-flagged host is deleted independently with probability $p$; $p=1$ equals an absent manifest. All manifest-flagged hosts in the faulted runs are injected hosts ($114$ entries in $78$ cells, none irrelevant), so deleting other manifest entries changes nothing and random deletion coincides with deleting true hosts. Exact expectations; Success with organization-level $95\%$ CI; cost over all $180$ cells. Clean-run alerts are unchanged ($0.106$) because the manifest raises none.}
+\label{tab:ec-manifest}
+\begin{tabular}{lrrrrr}\toprule
+manifest & Success [95\% CI] & Detect@1 & $c/C^\ast$ & F10 Succ. & F4 Succ.\\\midrule
+$p=0$ & 0.806 [0.74, 0.87] & 0.736 & 6.92 & 0.933 & 0.742\\
+$p=0.25$ & 0.685 [0.63, 0.74] & 0.698 & 6.84 & 0.601 & 0.728\\
+$p=0.5$ & 0.592 [0.54, 0.64] & 0.649 & 6.77 & 0.346 & 0.715\\
+$p=0.75$ & 0.520 [0.47, 0.57] & 0.586 & 6.70 & 0.155 & 0.703\\
+absent ($p=1$) & 0.467 [0.41, 0.52] & 0.502 & 6.63 & 0.017 & 0.692\\
+\bottomrule\end{tabular}\end{table}

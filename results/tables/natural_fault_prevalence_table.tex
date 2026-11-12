@@ -1,0 +1,13 @@
+\begin{table}[t]\centering\small
+\caption{Representativeness of the injected faults, measured on the $20$ \emph{clean} (un-injected) runs at the same $\geq50\%$ peer base-rate as the detector. The F4 \emph{structural form} --- a host lacking a peer-common evidence family --- is present naturally on $10.5\%$ of hosts (range $[0,38]\%$); we claim only that this form is not an artifact we introduced, not that these hosts are confirmed faults. Per injected family: active\_observation omission is common naturally, dns omission rare-but-real, and certificate/registration are never peer-common (base rate $\approx0.01$), so injecting those probes the natural rare-family detection floor. F10 (host omission) has \textbf{no} natural analog ($0$ resolved-but-unused hosts on clean runs, threshold-independent) and is justified on threat-model grounds rather than empirical frequency: discovery completes normally and its manifest is captured before the drop (\S\ref{sec:approach}), but the drop still measurably shifts the output (\S\ref{sec:rq1}) and, absent an independent host manifest, cannot be judged from a single deployed run --- this is a distinct rationale from F4's, not the same output-invisibility argument.}
+\label{tab:representativeness}
+\begin{tabular}{lrrr}\toprule
+injected family (F4) & mean base rate & peer-common in & natural miss rate\\
+ & (clean) & \#orgs & (when peer-common)\\\midrule
+dns & 0.992 & 20/20 & 0.0078\\
+active\_observation & 0.805 & 17/20 & 0.1230\\
+certificate & 0.014 & 0/20 & -- (rare)\\
+registration & 0.014 & 0/20 & -- (rare)\\
+\midrule
+\multicolumn{4}{p{.9\linewidth}}{\footnotesize These clean-run family-sparse hosts are exactly the hosts that constitute the detector's clean false-alarm rate (\S\ref{sec:rq2}) --- one phenomenon in two roles, not double-counted. Absent per-host ground truth we cannot tell a genuine natural omission from a host that legitimately lacks the family, so we claim structural representativeness only, never that a given natural instance is a fault.}\\
+\bottomrule\end{tabular}\end{table}

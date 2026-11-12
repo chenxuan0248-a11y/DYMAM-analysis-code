@@ -1,0 +1,18 @@
+\begin{table}[t]\centering\small
+\caption{E3 main results: 20 organizations $\times$ 9 local fault types (180 cells), Oracle localization. ARCS attains the ILP optimum ($\rho_C\!=\!1$) at cost $\ll$ global. On the 100 multi-invocation cells single-point \emph{structurally} under-covers (it repairs one invocation); ARCS covers them at the optimum -- a mechanism statement, not an empirical margin. Scope R is bounded by an achievable ceiling 0.874 (global; $D(f)$ overcounts un-repairable records): ARCS attains it (coverage-of-reachable $=1.00$), single-point $=0.634<$ ceiling. Success@$B_0$ margin $+0.111$ is identical in all 20 orgs (Wilcoxon $p=8e-06$); it is deterministic (org-independent cost spec), so read it via the sign test, not a bootstrap CI. Cost/harm-vs-global carry the org variance.}
+\label{tab:e3-main}
+\begin{tabular}{lrrrrrr}\toprule
+Method & Success & Success@$B_0$ & mean cost & $\rho_C$ & Scope P & Scope R\\\midrule
+Global replay & 1.000 & 0.000 & 321.75 & -- & 0.011 & 0.874 (ceil)\\
+Single-point & 0.444 & 0.444 & 2.01 & -- & 1.0 & 0.634\\
+ILP oracle & 1.000 & 0.556 & 4.15 & 1.00 & =ARCS & =ARCS\\
+\textbf{ARCS} & 1.000 & 0.556 & 4.15 & 1.00 & 1.0 & 0.874\\
+\midrule
+\multicolumn{7}{l}{\emph{ARCS under Real (detector-only) localization:}}\\
+\quad host-grain & 0.806 &  & 7.1\,$C^*$ &  &  & \\
+\quad family-grain & 0.661 &  & 1.01\,$C^*$ &  &  & \\
+\midrule
+\multicolumn{7}{l}{\emph{F2 negative control (intrinsically global): ARCS/global $=0.839$ $\Rightarrow$ ARCS $\approx$ global (does not shrink).}}\\
+\midrule
+\multicolumn{7}{p{.95\linewidth}}{\footnotesize Scope R ceiling $=0.874$ (global re-collect; $D(f)$ includes records no re-collection restores). ARCS $=0.874$ attains the ceiling (coverage-of-reachable $=1.00$); single-point $=0.634$ falls short. ILP $\equiv$ ARCS by construction ($\rho_C=1$), so its scope P/R equal ARCS's (the ILP result stores only cost/success).}\\
+\bottomrule\end{tabular}\end{table}

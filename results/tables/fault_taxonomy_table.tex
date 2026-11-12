@@ -1,0 +1,29 @@
+\begin{table}[t]\centering\small
+\caption{The F1--F10 fault taxonomy. Mechanism class and leaf-repairability are
+independent: the repair-class labels compactly render the categories in
+\texttt{faults.py}, while
+``Leaf?'' records whether a repairable leaf action exists. \textbf{F4} and
+\textbf{F10} form the main grid; F7/F8 are non-leaf triage cases and F2 is the
+global-fault negative control. Source: the frozen fault registry and
+\texttt{triage\_nonleaf\_v1.json}.}
+\label{tab:taxonomy}
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{@{}cllllc@{}}\toprule
+Fault & Injector & Mechanism & Injection node & Repair class & Leaf?\\\midrule
+F1 & \shortstack[l]{delete\_source\_artifact\\\_payload}
+   & record tamper & source artifact & record & No\\
+F3 & \shortstack[l]{tamper\_source\_artifact\\\_payload}
+   & record tamper & source artifact & record & No\\
+F5 & swap\_snapshot & record tamper & evidence event & record & No\\
+F6 & swap\_scope & record tamper & evidence event & record & No\\
+F7 & tamper\_decision & decision tamper & decision & record & No\\
+F9 & forge\_parent & redundancy tamper & evidence event & record & No\\
+F8 & \shortstack[l]{evidence\_gate\\\_bypass}
+   & gate bypass & project/validate & gate logic & No\\
+\textbf{F4} & normalization\_bug & family omission & project/validate & leaf & Yes\\
+\textbf{F10} & \shortstack[l]{premature\\\_termination}
+   & host omission & discovery & leaf & Yes\\
+F2 & wrong\_tool & global value tamper & discovery & leaf & Yes\\
+\bottomrule
+\end{tabular}
+\end{table}

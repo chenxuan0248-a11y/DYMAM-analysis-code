@@ -1,0 +1,22 @@
+# experiments/exp_arcs/ilp_config.yaml — ARCS ILP oracle parameters (Step 2.2).
+# FROZEN 2026-09-16. Cost/harm are at (target, source_family) INVOCATION grain
+# (dag.scope_cost); the decision unit is a tool invocation, not an evidence record.
+config_version: arcs-ilp-v1
+
+objective:
+  # min_S  Σ_{invocation i in S} [ alpha*c(i) + beta*h(i) ]   (NOT min|S|, NOT pure C)
+  alpha: 1.0      # cost weight, native cost units (dns=1 … http=3 … nmap=5)
+  beta: 1.0       # harm weight, neutral; hard safety lives in the constraints
+
+constraints:
+  E_min: 1.0            # EvidenceCoverage ≥ E_min; the oracle solves FULL success ⇒ 1.0
+  H_max: 93             # total-harm cap. = max global re-collect harm across the pilot
+                        # (mozilla 84 / cloudflare 43 / wikimedia 93 / github 75 /
+                        # redhat 63) → non-binding baseline; E4 / E7-D sweep tighter.
+  forbid_irreversible: true   # no reversibility=irreversible invocation in S (hard)
+
+# Coverage is RESULT-relevant (counterfactual.coverage_map: the leaves each
+# contaminated report_item needs), NOT literal full D(f); scope P/R is still
+# scored vs full D(f). Substitution (Phase 4.2) plugs in as ALTERNATIVE covering
+# invocations per output — none in the pilot (H2 Opportunistic), so S* is forced
+# = the minimal cover and ρC ≈ 1 (ARCS ≈ oracle) is expected.

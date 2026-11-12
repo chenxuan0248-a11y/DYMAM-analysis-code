@@ -1,0 +1,15 @@
+\begin{table}[t]\centering\small
+\caption{E3 by fault type (the effective independent unit for the ARCS-vs-single comparison). Each of the 9 types is byte-identical across all 20 organizations under the organization-independent cost spec, so between-organization variance is 0. ARCS strictly beats single-point exactly on the multi-invocation types, where single-point structurally repairs only one invocation.}
+\label{tab:e3-faulttype}
+\begin{tabular}{lrrrrrr}\toprule
+Fault type & \#org & ARCS Succ & SP Succ & ARCS@$B_0$ & SP@$B_0$ & ARCS/GL cost\\\midrule
+F4@dns & 20 & 1.00 & 1.00 & 1.00 & 1.00 & 1.0/322\\
+F4@active\_observation & 20 & 1.00 & 1.00 & 1.00 & 1.00 & 3.0/322\\
+F4@certificate & 20 & 1.00 & 1.00 & 1.00 & 1.00 & 1.0/322\\
+F4@registration & 20 & 1.00 & 1.00 & 1.00 & 1.00 & 1.0/322\\
+F10-local & 20 & 1.00 & 0.00 & 0.00 & 0.00 & 4.1/322\\
+F4-host & 20 & 1.00 & 0.00 & 0.00 & 0.00 & 5.0/322\\
+F4-2host-dns & 20 & 1.00 & 0.00 & 1.00 & 0.00 & 2.0/322\\
+F10-2host & 20 & 1.00 & 0.00 & 0.00 & 0.00 & 8.1/322\\
+F10-3host & 20 & 1.00 & 0.00 & 0.00 & 0.00 & 12.1/322\\
+\bottomrule\end{tabular}\end{table}

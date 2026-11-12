@@ -1,0 +1,17 @@
+\begin{table}[t]\centering\small
+\caption{Frozen repair-action cost/reversibility/harm spec (\S\ref{sec:approach}; \texttt{cost\_harm\_spec.yaml}, spec\_version=arcs-cost-harm-v1, sha256=dad84502e583\ldots), the concrete numbers behind every $c(v)$, $h(v)$, $\rho_C$, cost-saving, and harm-saving figure in \S\ref{sec:rq3}--\S\ref{sec:rq4}. ``source family'' is the evidence family (from the attributed DAG) that this action regenerates when re-run. \texttt{nmap\_scan}, \texttt{testbed\_write}, \texttt{prod\_config} are defined in the frozen spec but never invoked by any family on this low-interaction reconnaissance corpus --- the concrete reason the harm budget and irreversibility ban are inert here (\S\ref{sec:disc},\S\ref{sec:threats}), not an omission from this table. \texttt{nmap\_scan} is a generic active port-scan action; the pipeline's passive InternetDB lookup tool (code name \texttt{nmap}) belongs to active\_observation and is costed as \texttt{http\_probe}.}
+\label{tab:cost-harm-spec}
+\begin{tabular}{lrlrl}\toprule
+action & cost $c(v)$ & reversibility & harm $h(v)$ & source family\\\midrule
+\texttt{dns\_resolve} & 1 & idempotent & 0 & dns\\
+\texttt{cert\_lookup} & 1 & idempotent & 0 & certificate\\
+\texttt{rdap\_query} & 1 & idempotent & 0 & registration\\
+\texttt{subfinder} & 2 & idempotent & 0 & passive\_observation\\
+\texttt{http\_probe} & 3 & idempotent & 1 & active\_observation\\
+\texttt{nmap\_scan} & 5 & idempotent & 3 & \emph{unused}\\
+\texttt{cve\_rag} & 5 & reversible & 0 & \shortstack[l]{vulnerability context;\\applicability validation}\\
+\texttt{cache\_rebuild} & 8 & reversible & 0 & temporal\_memory\\
+\texttt{testbed\_write} & 10 & compensatable & 5 & \emph{unused}\\
+\texttt{prod\_config} & 15 & irreversible & 20 & \emph{unused}\\
+\texttt{full\_replay} & 20 & reversible & 0 & llm\_inference, \allowbreak system\_diagnostic, \allowbreak other\\
+\bottomrule\end{tabular}\end{table}

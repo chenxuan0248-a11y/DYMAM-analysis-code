@@ -1,0 +1,14 @@
+\begin{table}[t]\centering\small
+\caption{Leave-one-organization-out cross-validation of the peer-anomaly threshold (detection, host grain, $20$ folds). For each fold, $t^\ast$ is selected by $\arg\max$ mean detection-$F_1$ on the $19$ training orgs and evaluated on the held-out org. All folds select $t^\ast\!=\!0.97$, so the selection is stable when any one organization is left out, and each held-out value is that organization's value at $t^\ast$. Because every fold selects the same threshold, the fold-averaged train$-$held-out $F_1$ gap is zero by construction and the per-fold gap is a rescaling of the held-out deviation; neither is evidence about selection optimism, so neither is reported.}
+\label{tab:threshold-cv}
+\begin{tabular}{lr}\toprule
+quantity & value\\\midrule
+selected $t^\ast$ (unique across 20 folds) & [0.97]\\
+held-out $F_1$, mean & 0.663\\
+\quad held-out $F_1$ range (per org) & $[0.342,\,0.807]$\\
+\quad held-out $F_1$ std across folds & 0.133\\
+held-out mean precision / recall & 0.599 / 0.767\\
+held-out mean clean false-alarm rate & 0.008\\
+\midrule
+\multicolumn{2}{p{.82\linewidth}}{\footnotesize The per-org $F_1$ spread reflects organization heterogeneity. The CV says little beyond selection stability: any two training sets share $18$ of $19$ organizations, and detection-$F_1$ is near-monotone in $t$ (see threats to validity). $t^\ast$ is a detection-level optimum, not an end-to-end repair optimum.}\\
+\bottomrule\end{tabular}\end{table}

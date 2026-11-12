@@ -1,0 +1,10 @@
+\begin{table}[t]\centering\small
+\caption{Reference-free detector as a precision/recall knob (host grain, 180 faulted + 20 clean runs). The only tunable and only false-alarm source is peer-anomaly's base-rate threshold $t$. Ranking quality is AUC-ROC$=0.914$, AUC-PR$=0.269$ ($21\times$ the $0.013$ prevalence baseline). Precision $0.286$ is the $t\!=\!0.5$ operating point, not a ceiling: raising $t$ to $0.9$ doubles precision and cuts false alarms $5\times$ at $<2\%$ recall loss.}
+\label{tab:detector-knob}
+\begin{tabular}{lrrrr}\toprule
+threshold $t$ & precision & recall & F1 & clean false-alarm rate\\\midrule
+0.5\;(frozen) & 0.286 & 0.819 & 0.424 & 0.106\\
+0.7 & 0.325 & 0.819 & 0.465 & 0.087\\
+0.9 & 0.539 & 0.808 & 0.647 & 0.020\\
+0.95 & 0.574 & 0.808 & 0.671 & 0.011\\
+\bottomrule\end{tabular}\end{table}

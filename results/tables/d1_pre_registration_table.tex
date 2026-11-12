@@ -1,0 +1,14 @@
+\begin{table}[t]\centering\small
+\caption{Full D1 pre-registered evidence-redundancy survey (\S\ref{sec:design}, \S\ref{sec:rq1}; \texttt{s2\_d1\_frozen\_v1.json}, $n=12170$ claims, $18$ orgs), the per-claim-type breakdown behind the pooled numbers reported in \S\ref{sec:rq1}. $R(c)$ is the count of independent source families \texttt{active\_observation}, \texttt{certificate}, \texttt{dns}, \texttt{registration} supporting claim $c$; Coverage$_{2+}=P(R\geq2)$. The three \textbf{bold} rows are the substantive claim types --- the ones ARCS actually repairs --- and are the D1 primary metric (pooled $n=8690$, Coverage$_{2+}=0.000$, frozen threshold $0.3$, verdict H2 Opportunistic); \texttt{asset\_identity}/\texttt{organization\_association} and the pooled-overall row are context only, not the primary metric, since redundancy in asset existence/org attribution does not make a service, technology, or CVE finding substitutable.}
+\label{tab:d1-full}
+\begin{tabular}{lrrrrr}\toprule
+claim type & $n$ & $P(R=1)$ & $P(R=2)$ & $P(R\geq3)$ & Coverage$_{2+}$\\\midrule
+asset\_identity & 1740 & 0.0040 & 0.0086 & 0.9874 & 0.996\\
+organization\_association & 1740 & 0.0040 & 0.0379 & 0.9580 & 0.996\\
+\textbf{service\_observation} & 3547 & 1.0000 & 0.0000 & 0.0000 & \textbf{0.000}\\
+\textbf{technology\_identification} & 1497 & 1.0000 & 0.0000 & 0.0000 & \textbf{0.000}\\
+\textbf{vulnerability\_applicability} & 3646 & 1.0000 & 0.0000 & 0.0000 & \textbf{0.000}\\
+\midrule
+\textbf{substantive pooled (D1 primary)} & 8690 & 1.0000 & 0.0000 & 0.0000 & \textbf{0.000}\\
+overall (context) & 12170 & 0.7152 & 0.0067 & 0.2781 & 0.285\\
+\bottomrule\end{tabular}\end{table}

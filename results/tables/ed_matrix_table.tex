@@ -1,0 +1,19 @@
+\begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Repair success by fault variant and localization signal ($20$ organizations per variant). Each signal's flagged region is handed to the same host-grain repair mapper (family grain for comb./fam.); Success is the unbudgeted counterfactual criterion. valid.\ = validator flags, peer = peer-anomaly ($t=0.5$), manif.\ = discovery manifest, comb.\ = their union. $^\dagger$Oracle localization (upper references, not deployable): SP = single-point repair of the injected site, ARCS = constrained scope. Bottom rows: organization-level mean with $95\%$ bootstrap CI, and mean spec cost $c/C^\ast$ over all $180$ cells including failed ones.}
+\label{tab:ed-matrix}
+\begin{tabular}{lrrrrrrr}\toprule
+variant & valid. & peer & manif. & comb./host & comb./fam. & SP$^\dagger$ & ARCS$^\dagger$\\\midrule
+F4@dns & 0.00 & 0.75 & 0.05 & 0.80 & 0.80 & 1.00 & 1.00\\
+F4@active\_observation & 0.80 & 0.85 & 0.00 & 0.95 & 0.95 & 1.00 & 1.00\\
+F4@certificate & 0.00 & 0.45 & 0.00 & 0.45 & 0.00 & 1.00 & 1.00\\
+F4@registration & 0.00 & 0.50 & 0.00 & 0.50 & 0.00 & 1.00 & 1.00\\
+F4-host & 0.80 & 0.00 & 1.00 & 1.00 & 1.00 & 0.00 & 1.00\\
+F4-2host-dns & 0.00 & 0.70 & 0.05 & 0.75 & 0.75 & 0.00 & 1.00\\
+F10-local & 0.00 & 0.05 & 0.85 & 0.90 & 0.85 & 0.00 & 1.00\\
+F10-2host & 0.00 & 0.00 & 0.40 & 0.95 & 0.80 & 0.00 & 1.00\\
+F10-3host & 0.00 & 0.00 & 0.40 & 0.95 & 0.80 & 0.00 & 1.00\\
+\midrule
+all: Success & 0.178 & 0.367 & 0.306 & 0.806 & 0.661 & 0.444 & 1.000\\
+\quad 95\% CI & [0.13, 0.21] & [0.31, 0.42] & [0.26, 0.36] & [0.74, 0.87] & [0.58, 0.73] & [0.44, 0.44] & [1.00, 1.00]\\
+all: $c/C^\ast$ & 0.21 & 6.52 & 0.38 & 6.92 & 0.70 & 0.70 & 1.00\\
+\bottomrule\end{tabular}\end{table}

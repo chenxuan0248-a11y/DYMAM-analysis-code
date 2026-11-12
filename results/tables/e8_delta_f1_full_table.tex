@@ -1,0 +1,17 @@
+\begin{table}[t]\centering\small
+\caption{Full end-to-end asset-$F_1$ $\Delta F_1=$~repaired$-$faulted across all four asset grains ($180$ cells), the companion to the host-grain-only Table~\ref{tab:e8} in \S\ref{sec:rq1}. Repaired $\equiv$ clean exactly on every one of these $36$ (fault type $\times$ metric) cells plus the overall row (verified programmatically, not by inspection), so only $\Delta F_1$ is shown; the faulted/repaired/clean absolute values are in \texttt{e8\_delta\_f1\_v1.json}. Rows marked $\star$ have $\Delta F_1=0$ on that grain (output-invisible on that metric). cpe can be slightly negative (e.g.\ F4@active\_observation, F10-local): repaired$=$clean, and the clean run itself carries a few cpe false positives vs.\ GT, so a fault that happens to drop one of those FPs looks marginally ``better'' before repair --- a faithful artifact of partial ground truth, not a regression (\S\ref{sec:threats}).}
+\label{tab:e8-full}
+\begin{tabular}{lrrrr}\toprule
+fault type & $\Delta$subdomain & $\Delta$host & $\Delta$port & $\Delta$cpe\\\midrule
+F4@dns & +0.0000$\star$ & +0.0000$\star$ & +0.0000$\star$ & +0.0000$\star$\\
+F4@active\_observation & +0.0000$\star$ & +0.0000$\star$ & +0.0031 & -0.0044\\
+F4@certificate & +0.0000$\star$ & +0.0000$\star$ & +0.0000$\star$ & +0.0000$\star$\\
+F4@registration & +0.0000$\star$ & +0.0000$\star$ & +0.0000$\star$ & +0.0000$\star$\\
+F4-host & +0.0014 & +0.0013 & +0.0052 & +0.0042\\
+F4-2host-dns & +0.0000$\star$ & +0.0000$\star$ & +0.0000$\star$ & +0.0000$\star$\\
+F10-local & +0.0045 & +0.0056 & +0.0031 & -0.0044\\
+F10-2host & +0.0063 & +0.0070 & +0.0087 & +0.0000$\star$\\
+F10-3host & +0.0092 & +0.0098 & +0.0148 & +0.0044\\
+\midrule
+\textbf{overall} & +0.0024 & +0.0026 & +0.0039 & +0.0000$\star$\\
+\bottomrule\end{tabular}\end{table}

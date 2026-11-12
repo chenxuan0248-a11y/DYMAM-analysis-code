@@ -1,0 +1,22 @@
+\begin{tabular}{llrrrrl}
+\toprule
+Report variant & Method & Success & Detect@1 & Detect@3 & Cost/$C^*$ & Same bytes \\
+\midrule
+full\_existing & combined & 0.8056 & 0.7355 & 0.8075 & 6.9163 & yes \\
+full\_existing & iforest & 0.9333 & 0.4556 & 0.8278 & 15.8188 & yes \\
+full\_existing & robust\_z & 0.9278 & 0.4338 & 0.8803 & 15.4861 & yes \\
+\addlinespace
+report\_llm\_disabled & combined & 0.8056 & 0.7355 & 0.8075 & 6.9163 & yes \\
+report\_llm\_disabled & iforest & 0.9333 & 0.4556 & 0.8278 & 15.8188 & yes \\
+report\_llm\_disabled & robust\_z & 0.9278 & 0.4338 & 0.8803 & 15.4861 & yes \\
+\addlinespace
+fixed\_template & combined & 0.8056 & 0.7355 & 0.8075 & 6.9163 & yes \\
+fixed\_template & iforest & 0.9333 & 0.4556 & 0.8278 & 15.8188 & yes \\
+fixed\_template & robust\_z & 0.9278 & 0.4338 & 0.8803 & 15.4861 & yes \\
+\addlinespace
+perturbed\_text & combined & 0.8056 & 0.7355 & 0.8075 & 6.9163 & yes \\
+perturbed\_text & iforest & 0.9333 & 0.4556 & 0.8278 & 15.8188 & yes \\
+perturbed\_text & robust\_z & 0.9278 & 0.4338 & 0.8803 & 15.4861 & yes \\
+\addlinespace
+\bottomrule
+\end{tabular}

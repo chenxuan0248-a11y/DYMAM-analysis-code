@@ -1,0 +1,21 @@
+\begin{table}[t]\centering\small
+\caption{Reference-free localization signal ablation on the 180-cell E3 grid (host-grain, offline A1 counterfactual; reuses the frozen detector's scoring, \texttt{combined} reproduces \texttt{e3\_detector\_v1.json} exactly). \textbf{Leave-one-in} (single columns) and \textbf{leave-one-out} (the drop row) isolate each signal. The validator-flag signal (the deterministic support-validation markers, also read by the first-flag/provenance-backtrace probes) contributes only $0.011$ to end-to-end success; the entire lift is carried by the two proposed reference-free signals: peer-anomaly ($0.411$) and discovery-manifest ($0.339$).}
+\label{tab:loc-ablation}
+\begin{tabular}{lccccccc}\toprule
+fault subtype & flag & peer & manif. & flag$\cup$peer & flag$\cup$manif. & peer$\cup$manif. & \textbf{combined}\\
+ & & & & \emph{(--manif.)} & \emph{(--peer)} & \emph{(--flag)} & \\\midrule
+F4@dns & 0.000 & 0.750 & 0.050 & 0.750 & 0.050 & 0.800 & \textbf{0.800}\\
+F4@active\_observation & 0.800 & 0.850 & 0.000 & 0.950 & 0.800 & 0.850 & \textbf{0.950}\\
+F4@certificate & 0.000 & 0.450 & 0.000 & 0.450 & 0.000 & 0.450 & \textbf{0.450}\\
+F4@registration & 0.000 & 0.500 & 0.000 & 0.500 & 0.000 & 0.500 & \textbf{0.500}\\
+F4-host & 0.800 & 0.000 & 1.000 & 0.800 & 1.000 & 1.000 & \textbf{1.000}\\
+F4-2host-dns & 0.000 & 0.700 & 0.050 & 0.700 & 0.050 & 0.750 & \textbf{0.750}\\
+F10-local & 0.000 & 0.050 & 0.850 & 0.050 & 0.850 & 0.900 & \textbf{0.900}\\
+F10-2host & 0.000 & 0.000 & 0.400 & 0.000 & 0.400 & 0.950 & \textbf{0.950}\\
+F10-3host & 0.000 & 0.000 & 0.400 & 0.000 & 0.400 & 0.950 & \textbf{0.950}\\
+\midrule
+\textbf{overall} & 0.178 & 0.367 & 0.306 & 0.467 & 0.394 & 0.794 & \textbf{0.806}\\
+\emph{mean cost/$C^*$} & 1.170 & 11.790 & 1.000 & 10.000 & 1.080 & 7.190 & 7.120\\
+\midrule
+\multicolumn{8}{p{.97\linewidth}}{\footnotesize Leave-one-out success drop: remove validator flag $-0.011$, remove manifest $-0.339$, remove peer $-0.411$. Manifest recovers the F10 host-omission cells (invisible to the other signals); peer recovers common-family F4 drops (dns/ao); validator flagging is near-redundant. F4@certificate / F4@registration stay at the reference-free floor (rare-family absence is indistinguishable).}\\
+\bottomrule\end{tabular}\end{table}
